@@ -1,0 +1,10 @@
+^D:\CODES\FLUTTER\PROJECT_MODEL_AI\BUILD\WINDOWS\X64\CMAKEFILES\548293ACACA0D2234EBF457945F84C42\GENERATE.STAMP.RULE
+setlocal
+D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -SD:/codes/flutter/project_model_ai/windows -BD:/codes/flutter/project_model_ai/build/windows/x64 --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/codes/flutter/project_model_ai/build/windows/x64/project_model_ai.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
