@@ -5,9 +5,12 @@ import os
 
 app = Flask(__name__)
 
-model_path = os.path.join(os.path.dirname(__file__), 'Models')
+# Use relative paths
+model_path = os.path.join(os.path.dirname(__file__), 'Models/Regression')
+
 svm_model = load(os.path.join(model_path, 'svm_model.joblib'))
 scaler = load(os.path.join(model_path, 'scaler.joblib'))
+
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -18,4 +21,5 @@ def predict():
     return jsonify({'prediction': int(prediction[0])})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Make it work on Railway
+    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))
