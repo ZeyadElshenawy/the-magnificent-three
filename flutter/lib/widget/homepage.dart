@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_model_ai/UI_ux/Colors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert';
 
 class Homepage extends StatefulWidget {
   final bool darkMode;
@@ -14,11 +15,14 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> {
   String _userName = 'Guest';
+  int _totalPredictions = 0;
+  double _successRate = 0.0;
 
   @override
   void initState() {
     super.initState();
     _loadUserName();
+    _loadPredictionStats();
   }
 
   Future<void> _loadUserName() async {
@@ -27,6 +31,37 @@ class _HomepageState extends State<Homepage> {
       _userName = prefs.getString('userName')?.trim().isEmpty ?? true
           ? 'Guest'
           : prefs.getString('userName') ?? 'Guest';
+    });
+  }
+
+  Future<void> _loadPredictionStats() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    // Load regression history
+    final regressionJson = prefs.getStringList('prediction_history') ?? [];
+    final regressionHistory = regressionJson
+        .map((item) => jsonDecode(item) as Map<String, dynamic>)
+        .toList();
+
+    // Load classification history
+    final classificationJson =
+        prefs.getStringList('classification_history') ?? [];
+    final classificationHistory = classificationJson
+        .map((item) => jsonDecode(item) as Map<String, dynamic>)
+        .toList();
+
+    // Calculate total predictions and success rate
+    final totalPredictions =
+        regressionHistory.length + classificationHistory.length;
+    final successfulPredictions =
+        regressionHistory.where((item) => !item['isError']).length +
+            classificationHistory.where((item) => !item['isError']).length;
+
+    setState(() {
+      _totalPredictions = totalPredictions;
+      _successRate = totalPredictions > 0
+          ? (successfulPredictions / totalPredictions) * 100
+          : 0.0;
     });
   }
 
@@ -127,7 +162,7 @@ class _HomepageState extends State<Homepage> {
               Expanded(
                 child: _buildStatCard(
                   title: 'Completed',
-                  value: '2',
+                  value: _totalPredictions.toString(),
                   cardColor: const Color(0xFF43A047),
                   icon: Icons.check_circle,
                 ),
@@ -136,7 +171,7 @@ class _HomepageState extends State<Homepage> {
               Expanded(
                 child: _buildStatCard(
                   title: 'Success Rate',
-                  value: '40%',
+                  value: '${_successRate.toStringAsFixed(1)}%',
                   cardColor: const Color(0xFF8D6E63),
                   icon: Icons.analytics,
                 ),

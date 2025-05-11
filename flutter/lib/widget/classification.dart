@@ -3,6 +3,9 @@ import 'package:project_model_ai/UI_UX/Colors.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:desktop_drop/desktop_drop.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Classification extends StatefulWidget {
   final bool darkMode;
@@ -18,11 +21,108 @@ class _ClassificationState extends State<Classification> {
   bool _dragging = false;
   bool _showRightBar = false;
   final TextEditingController _nameController = TextEditingController();
+  List<Map<String, dynamic>> _history = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _loadHistory();
+  }
 
   @override
   void dispose() {
     _nameController.dispose();
     super.dispose();
+  }
+
+  Future<void> _loadHistory() async {
+    final prefs = await SharedPreferences.getInstance();
+    final historyJson = prefs.getStringList('classification_history') ?? [];
+    setState(() {
+      _history = historyJson
+          .map((item) => jsonDecode(item) as Map<String, dynamic>)
+          .toList();
+    });
+  }
+
+  Future<void> _saveHistory() async {
+    final prefs = await SharedPreferences.getInstance();
+    final historyJson = _history.map((item) => jsonEncode(item)).toList();
+    await prefs.setStringList('classification_history', historyJson);
+  }
+
+  void _addToHistory(String message, bool isError, {String? imagePath}) {
+    final historyItem = {
+      'message': message,
+      'timestamp': DateTime.now().toIso8601String(),
+      'isError': isError,
+      if (imagePath != null) 'imagePath': imagePath,
+    };
+    setState(() {
+      _history.insert(0, historyItem);
+    });
+    _saveHistory();
+  }
+
+  Future<void> sendImageForClassification() async {
+    if (_image == null) return;
+
+    try {
+      // Create multipart request
+      var request = http.MultipartRequest(
+        'POST',
+        Uri.parse('http://127.0.0.1:5000/classify'),
+      );
+
+      // Add image file
+      request.files.add(
+        await http.MultipartFile.fromPath(
+          'image',
+          _image!.path,
+          filename: _nameController.text.isNotEmpty
+              ? _nameController.text
+              : _image!.path.split('/').last,
+        ),
+      );
+
+      // Send request
+      var response = await request.send();
+      var responseData = await response.stream.bytesToString();
+      if (response.statusCode == 200) {
+        final result = jsonDecode(responseData);
+        String diagnosis = '';
+        switch (result['class']) {
+          case '0':
+            diagnosis = 'No cancer detected';
+            break;
+          case '1':
+            diagnosis = 'Cancer detected';
+            break;
+          case '2':
+            diagnosis = 'Suspected case ';
+            break;
+          default:
+            diagnosis = 'Unknown classification result';
+        }
+        String patinName = _nameController.text.isNotEmpty
+            ? _nameController.text
+            : "Unnamed Patin";
+        _addToHistory(
+          'Patin: $patinName\nDiagnosis: $diagnosis (Confidence: ${(result['confidence'] * 100).toStringAsFixed(2)}%)',
+          false,
+          imagePath: _image!.path,
+        );
+        // Clear image after successful classification
+        setState(() {
+          _image = null;
+          _nameController.clear();
+        });
+      } else {
+        _addToHistory('Server Error: ${response.statusCode}', true);
+      }
+    } catch (e) {
+      _addToHistory('Error: $e', true);
+    }
   }
 
   Future getImage() async {
@@ -168,7 +268,7 @@ class _ClassificationState extends State<Classification> {
                                 ),
                                 controller: _nameController,
                                 decoration: InputDecoration(
-                                  hintText: 'Enter image name',
+                                  hintText: 'Enter Patin fish name',
                                   hintStyle: TextStyle(
                                     color: widget.darkMode
                                         ? AppColors.lightTheme.withOpacity(0.5)
@@ -215,9 +315,7 @@ class _ClassificationState extends State<Classification> {
                             ElevatedButton(
                               onPressed: _image == null
                                   ? null
-                                  : () {
-                                      // ////////////////////////////////////////////////Add classification logic here
-                                    },
+                                  : sendImageForClassification,
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: widget.darkMode
                                     ? AppColors.lightTheme
@@ -277,23 +375,130 @@ class _ClassificationState extends State<Classification> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'History',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: widget.darkMode
-                                ? AppColors.lightTheme
-                                : AppColors.primaryColor,
-                          ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.history,
+                                  color: widget.darkMode
+                                      ? AppColors.lightTheme
+                                      : AppColors.primaryColor,
+                                ),
+                                const SizedBox(width: 8),
+                                Text(
+                                  'History',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: widget.darkMode
+                                        ? AppColors.lightTheme
+                                        : AppColors.primaryColor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            IconButton(
+                              icon: Icon(
+                                Icons.delete_outline,
+                                color: widget.darkMode
+                                    ? AppColors.lightTheme
+                                    : AppColors.primaryColor,
+                              ),
+                              onPressed: () async {
+                                setState(() {
+                                  _history.clear();
+                                });
+                                final prefs =
+                                    await SharedPreferences.getInstance();
+                                await prefs.remove('classification_history');
+                              },
+                            ),
+                          ],
                         ),
                         const SizedBox(height: 16),
                         Expanded(
-                          child: ListView(
-                            children: const [
-                              // History items will be added here
-                            ],
-                          ),
+                          child: _history.isEmpty
+                              ? Center(
+                                  child: Text(
+                                    'No classifications yet',
+                                    style: TextStyle(
+                                      color: widget.darkMode
+                                          ? AppColors.lightTheme
+                                              .withOpacity(0.5)
+                                          : AppColors.primaryColor
+                                              .withOpacity(0.5),
+                                    ),
+                                  ),
+                                )
+                              : ListView.builder(
+                                  itemCount: _history.length,
+                                  itemBuilder: (context, index) {
+                                    final historyItem = _history[index];
+                                    return Container(
+                                      margin: const EdgeInsets.only(bottom: 12),
+                                      decoration: BoxDecoration(
+                                        color: widget.darkMode
+                                            ? AppColors.lightTheme
+                                                .withOpacity(0.1)
+                                            : AppColors.primaryColor
+                                                .withOpacity(0.1),
+                                        borderRadius: BorderRadius.circular(8),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(12),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            if (historyItem['imagePath'] !=
+                                                null)
+                                              ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(8),
+                                                child: Image.file(
+                                                  File(
+                                                      historyItem['imagePath']),
+                                                  height: 120,
+                                                  width: double.infinity,
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              ),
+                                            const SizedBox(height: 8),
+                                            Text(
+                                              historyItem['message'],
+                                              style: TextStyle(
+                                                color: historyItem['isError']
+                                                    ? Colors.red
+                                                    : widget.darkMode
+                                                        ? AppColors.lightTheme
+                                                        : AppColors
+                                                            .primaryColor,
+                                              ),
+                                            ),
+                                            const SizedBox(height: 4),
+                                            Text(
+                                              DateTime.parse(
+                                                      historyItem['timestamp'])
+                                                  .toLocal()
+                                                  .toString()
+                                                  .split('.')[0],
+                                              style: TextStyle(
+                                                fontSize: 12,
+                                                color: widget.darkMode
+                                                    ? AppColors.lightTheme
+                                                        .withOpacity(0.5)
+                                                    : AppColors.primaryColor
+                                                        .withOpacity(0.5),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                ),
                         ),
                       ],
                     ),
