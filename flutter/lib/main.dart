@@ -11,8 +11,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
   isDarkMode = prefs.getBool('isDarkMode') ?? false;
-
-  await FlaskServerService.startServer();
+  await FlaskServerService.startServers();
 
   runApp(const MyApp());
 
@@ -36,7 +35,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void dispose() {
-    FlaskServerService.stopServer();
+    FlaskServerService.stopServers();
     super.dispose();
   }
 

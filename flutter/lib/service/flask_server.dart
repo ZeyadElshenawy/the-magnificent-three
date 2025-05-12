@@ -1,37 +1,66 @@
 import 'dart:io';
 
 class FlaskServerService {
-  static Process? _serverProcess;
+  static Process? _classificationProcess;
+  static Process? _regressionProcess;
+  static bool _serversStarted = false;
 
-  static Future<bool> startServer() async {
+  static Future<bool> startServers() async {
+    if (_serversStarted) return true;
+
     try {
       // Check if Python is installed
-      await Process.run('python', ['--version']);
+      final pythonVersion = await Process.run('python', ['--version']);
+      if (pythonVersion.exitCode != 0) {
+        print('Python is not installed or not in PATH');
+        return false;
+      }
 
-      // Start the Flask server
-      _serverProcess = await Process.start('python',
-          [r'the-magnificent-three\ML_Model\FlskForClassification.py']);
+      // Start the Classification Flask server
+      _classificationProcess = await Process.start(
+        'python',
+        [r'the-magnificent-three\ML_Model\FlskForClassification.py'],
+      );
 
-      // Listen for server output
-      _serverProcess!.stdout.listen((event) {
-        print('Flask Server: ${String.fromCharCodes(event)}');
+      // Start the Regression Flask server
+      _regressionProcess = await Process.start(
+        'python',
+        [r'the-magnificent-three\ML_Model\FlaskForRegression.py'],
+      );
+
+      // Listen for Classification server output
+      _classificationProcess!.stdout.listen((event) {
+        print('Classification Server: ${String.fromCharCodes(event)}');
       });
 
-      _serverProcess!.stderr.listen((event) {
-        print('Flask Server Error: ${String.fromCharCodes(event)}');
+      _classificationProcess!.stderr.listen((event) {
+        print('Classification Server Error: ${String.fromCharCodes(event)}');
       });
 
-      // Wait a bit for the server to start
+      // Listen for Regression server output
+      _regressionProcess!.stdout.listen((event) {
+        print('Regression Server: ${String.fromCharCodes(event)}');
+      });
+
+      _regressionProcess!.stderr.listen((event) {
+        print('Regression Server Error: ${String.fromCharCodes(event)}');
+      });
+
+      // Wait for both servers to start
       await Future.delayed(const Duration(seconds: 2));
+      _serversStarted = true;
       return true;
     } catch (e) {
-      print('Error starting Flask server: $e');
+      print('Error starting Flask servers: $e');
       return false;
     }
   }
 
-  static void stopServer() {
-    _serverProcess?.kill();
-    _serverProcess = null;
+  static void stopServers() {
+    _classificationProcess?.kill();
+    _regressionProcess?.kill();
+    _classificationProcess = null;
+    _regressionProcess = null;
+    _serversStarted = false;
   }
 }
