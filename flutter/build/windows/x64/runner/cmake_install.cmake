@@ -1,4 +1,4 @@
-# Install script for directory: D:/codes/flutter/project_model_ai/windows/runner
+# Install script for directory: D:/Github/the-magnificent-three/flutter/windows/runner
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

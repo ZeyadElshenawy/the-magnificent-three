@@ -1,28 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\codes\flutter\project_model_ai\windows\flutter\ephemeral\cpp_client_wrapper\core_implementations.cc">
+    <ClCompile Include="D:\Github\the-magnificent-three\flutter\windows\flutter\ephemeral\cpp_client_wrapper\core_implementations.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\codes\flutter\project_model_ai\windows\flutter\ephemeral\cpp_client_wrapper\standard_codec.cc">
+    <ClCompile Include="D:\Github\the-magnificent-three\flutter\windows\flutter\ephemeral\cpp_client_wrapper\standard_codec.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\codes\flutter\project_model_ai\windows\flutter\ephemeral\cpp_client_wrapper\flutter_engine.cc">
+    <ClCompile Include="D:\Github\the-magnificent-three\flutter\windows\flutter\ephemeral\cpp_client_wrapper\flutter_engine.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\codes\flutter\project_model_ai\windows\flutter\ephemeral\cpp_client_wrapper\flutter_view_controller.cc">
+    <ClCompile Include="D:\Github\the-magnificent-three\flutter\windows\flutter\ephemeral\cpp_client_wrapper\flutter_view_controller.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\codes\flutter\project_model_ai\windows\flutter\CMakeLists.txt" />
+    <CustomBuild Include="D:\Github\the-magnificent-three\flutter\windows\flutter\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{8F355613-4B75-3373-9B60-6D8D0F3219BC}</UniqueIdentifier>
+      <UniqueIdentifier>{E6B0750C-5F0B-306F-BA67-4DF467172092}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{6B5B614E-2C7F-365F-9C29-60E87CCC9580}</UniqueIdentifier>
+      <UniqueIdentifier>{F2981EC6-2823-3B81-96B7-ED2224FEC665}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

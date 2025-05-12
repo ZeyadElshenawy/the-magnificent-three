@@ -1,4 +1,4 @@
-# Install script for directory: D:/codes/flutter/project_model_ai/windows/flutter/ephemeral/.plugin_symlinks/desktop_drop/windows
+# Install script for directory: D:/Github/the-magnificent-three/flutter/windows/flutter/ephemeral/.plugin_symlinks/desktop_drop/windows
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

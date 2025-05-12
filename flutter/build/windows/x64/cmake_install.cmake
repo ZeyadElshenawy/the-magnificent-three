@@ -1,4 +1,4 @@
-# Install script for directory: D:/codes/flutter/project_model_ai/windows
+# Install script for directory: D:/Github/the-magnificent-three/flutter/windows
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,173 +34,173 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/codes/flutter/project_model_ai/build/windows/x64/flutter/cmake_install.cmake")
+  include("D:/Github/the-magnificent-three/flutter/build/windows/x64/flutter/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/codes/flutter/project_model_ai/build/windows/x64/runner/cmake_install.cmake")
+  include("D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/codes/flutter/project_model_ai/build/windows/x64/plugins/bitsdojo_window_windows/cmake_install.cmake")
+  include("D:/Github/the-magnificent-three/flutter/build/windows/x64/plugins/bitsdojo_window_windows/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/codes/flutter/project_model_ai/build/windows/x64/plugins/desktop_drop/cmake_install.cmake")
+  include("D:/Github/the-magnificent-three/flutter/build/windows/x64/plugins/desktop_drop/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/codes/flutter/project_model_ai/build/windows/x64/plugins/file_selector_windows/cmake_install.cmake")
+  include("D:/Github/the-magnificent-three/flutter/build/windows/x64/plugins/file_selector_windows/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Runtime" OR NOT CMAKE_INSTALL_COMPONENT)
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-     "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Debug/project_model_ai.exe")
+     "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Debug/project_model_ai.exe")
     if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-    file(INSTALL DESTINATION "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Debug" TYPE EXECUTABLE FILES "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Debug/project_model_ai.exe")
+    file(INSTALL DESTINATION "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Debug" TYPE EXECUTABLE FILES "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Debug/project_model_ai.exe")
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Pp][Rr][Oo][Ff][Ii][Ll][Ee])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-     "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Profile/project_model_ai.exe")
+     "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Profile/project_model_ai.exe")
     if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-    file(INSTALL DESTINATION "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Profile" TYPE EXECUTABLE FILES "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Profile/project_model_ai.exe")
+    file(INSTALL DESTINATION "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Profile" TYPE EXECUTABLE FILES "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Profile/project_model_ai.exe")
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-     "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Release/project_model_ai.exe")
+     "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Release/project_model_ai.exe")
     if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-    file(INSTALL DESTINATION "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Release" TYPE EXECUTABLE FILES "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Release/project_model_ai.exe")
+    file(INSTALL DESTINATION "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Release" TYPE EXECUTABLE FILES "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Release/project_model_ai.exe")
   endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Runtime" OR NOT CMAKE_INSTALL_COMPONENT)
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-     "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Debug/data/icudtl.dat")
+     "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Debug/data/icudtl.dat")
     if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-    file(INSTALL DESTINATION "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Debug/data" TYPE FILE FILES "D:/codes/flutter/project_model_ai/windows/flutter/ephemeral/icudtl.dat")
+    file(INSTALL DESTINATION "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Debug/data" TYPE FILE FILES "D:/Github/the-magnificent-three/flutter/windows/flutter/ephemeral/icudtl.dat")
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Pp][Rr][Oo][Ff][Ii][Ll][Ee])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-     "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Profile/data/icudtl.dat")
+     "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Profile/data/icudtl.dat")
     if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-    file(INSTALL DESTINATION "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Profile/data" TYPE FILE FILES "D:/codes/flutter/project_model_ai/windows/flutter/ephemeral/icudtl.dat")
+    file(INSTALL DESTINATION "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Profile/data" TYPE FILE FILES "D:/Github/the-magnificent-three/flutter/windows/flutter/ephemeral/icudtl.dat")
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-     "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Release/data/icudtl.dat")
+     "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Release/data/icudtl.dat")
     if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-    file(INSTALL DESTINATION "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Release/data" TYPE FILE FILES "D:/codes/flutter/project_model_ai/windows/flutter/ephemeral/icudtl.dat")
+    file(INSTALL DESTINATION "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Release/data" TYPE FILE FILES "D:/Github/the-magnificent-three/flutter/windows/flutter/ephemeral/icudtl.dat")
   endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Runtime" OR NOT CMAKE_INSTALL_COMPONENT)
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-     "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Debug/flutter_windows.dll")
+     "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Debug/flutter_windows.dll")
     if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-    file(INSTALL DESTINATION "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Debug" TYPE FILE FILES "D:/codes/flutter/project_model_ai/windows/flutter/ephemeral/flutter_windows.dll")
+    file(INSTALL DESTINATION "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Debug" TYPE FILE FILES "D:/Github/the-magnificent-three/flutter/windows/flutter/ephemeral/flutter_windows.dll")
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Pp][Rr][Oo][Ff][Ii][Ll][Ee])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-     "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Profile/flutter_windows.dll")
+     "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Profile/flutter_windows.dll")
     if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-    file(INSTALL DESTINATION "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Profile" TYPE FILE FILES "D:/codes/flutter/project_model_ai/windows/flutter/ephemeral/flutter_windows.dll")
+    file(INSTALL DESTINATION "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Profile" TYPE FILE FILES "D:/Github/the-magnificent-three/flutter/windows/flutter/ephemeral/flutter_windows.dll")
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-     "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Release/flutter_windows.dll")
+     "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Release/flutter_windows.dll")
     if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-    file(INSTALL DESTINATION "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Release" TYPE FILE FILES "D:/codes/flutter/project_model_ai/windows/flutter/ephemeral/flutter_windows.dll")
+    file(INSTALL DESTINATION "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Release" TYPE FILE FILES "D:/Github/the-magnificent-three/flutter/windows/flutter/ephemeral/flutter_windows.dll")
   endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Runtime" OR NOT CMAKE_INSTALL_COMPONENT)
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-     "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Debug/bitsdojo_window_windows_plugin.lib;D:/codes/flutter/project_model_ai/build/windows/x64/runner/Debug/desktop_drop_plugin.dll;D:/codes/flutter/project_model_ai/build/windows/x64/runner/Debug/file_selector_windows_plugin.dll")
+     "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Debug/bitsdojo_window_windows_plugin.lib;D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Debug/desktop_drop_plugin.dll;D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Debug/file_selector_windows_plugin.dll")
     if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-    file(INSTALL DESTINATION "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Debug" TYPE FILE FILES
-      "D:/codes/flutter/project_model_ai/build/windows/x64/plugins/bitsdojo_window_windows/Debug/bitsdojo_window_windows_plugin.lib"
-      "D:/codes/flutter/project_model_ai/build/windows/x64/plugins/desktop_drop/Debug/desktop_drop_plugin.dll"
-      "D:/codes/flutter/project_model_ai/build/windows/x64/plugins/file_selector_windows/Debug/file_selector_windows_plugin.dll"
+    file(INSTALL DESTINATION "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Debug" TYPE FILE FILES
+      "D:/Github/the-magnificent-three/flutter/build/windows/x64/plugins/bitsdojo_window_windows/Debug/bitsdojo_window_windows_plugin.lib"
+      "D:/Github/the-magnificent-three/flutter/build/windows/x64/plugins/desktop_drop/Debug/desktop_drop_plugin.dll"
+      "D:/Github/the-magnificent-three/flutter/build/windows/x64/plugins/file_selector_windows/Debug/file_selector_windows_plugin.dll"
       )
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Pp][Rr][Oo][Ff][Ii][Ll][Ee])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-     "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Profile/bitsdojo_window_windows_plugin.lib;D:/codes/flutter/project_model_ai/build/windows/x64/runner/Profile/desktop_drop_plugin.dll;D:/codes/flutter/project_model_ai/build/windows/x64/runner/Profile/file_selector_windows_plugin.dll")
+     "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Profile/bitsdojo_window_windows_plugin.lib;D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Profile/desktop_drop_plugin.dll;D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Profile/file_selector_windows_plugin.dll")
     if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-    file(INSTALL DESTINATION "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Profile" TYPE FILE FILES
-      "D:/codes/flutter/project_model_ai/build/windows/x64/plugins/bitsdojo_window_windows/Profile/bitsdojo_window_windows_plugin.lib"
-      "D:/codes/flutter/project_model_ai/build/windows/x64/plugins/desktop_drop/Profile/desktop_drop_plugin.dll"
-      "D:/codes/flutter/project_model_ai/build/windows/x64/plugins/file_selector_windows/Profile/file_selector_windows_plugin.dll"
+    file(INSTALL DESTINATION "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Profile" TYPE FILE FILES
+      "D:/Github/the-magnificent-three/flutter/build/windows/x64/plugins/bitsdojo_window_windows/Profile/bitsdojo_window_windows_plugin.lib"
+      "D:/Github/the-magnificent-three/flutter/build/windows/x64/plugins/desktop_drop/Profile/desktop_drop_plugin.dll"
+      "D:/Github/the-magnificent-three/flutter/build/windows/x64/plugins/file_selector_windows/Profile/file_selector_windows_plugin.dll"
       )
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-     "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Release/bitsdojo_window_windows_plugin.lib;D:/codes/flutter/project_model_ai/build/windows/x64/runner/Release/desktop_drop_plugin.dll;D:/codes/flutter/project_model_ai/build/windows/x64/runner/Release/file_selector_windows_plugin.dll")
+     "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Release/bitsdojo_window_windows_plugin.lib;D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Release/desktop_drop_plugin.dll;D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Release/file_selector_windows_plugin.dll")
     if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-    file(INSTALL DESTINATION "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Release" TYPE FILE FILES
-      "D:/codes/flutter/project_model_ai/build/windows/x64/plugins/bitsdojo_window_windows/Release/bitsdojo_window_windows_plugin.lib"
-      "D:/codes/flutter/project_model_ai/build/windows/x64/plugins/desktop_drop/Release/desktop_drop_plugin.dll"
-      "D:/codes/flutter/project_model_ai/build/windows/x64/plugins/file_selector_windows/Release/file_selector_windows_plugin.dll"
+    file(INSTALL DESTINATION "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Release" TYPE FILE FILES
+      "D:/Github/the-magnificent-three/flutter/build/windows/x64/plugins/bitsdojo_window_windows/Release/bitsdojo_window_windows_plugin.lib"
+      "D:/Github/the-magnificent-three/flutter/build/windows/x64/plugins/desktop_drop/Release/desktop_drop_plugin.dll"
+      "D:/Github/the-magnificent-three/flutter/build/windows/x64/plugins/file_selector_windows/Release/file_selector_windows_plugin.dll"
       )
   endif()
 endif()
@@ -208,49 +208,49 @@ endif()
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Runtime" OR NOT CMAKE_INSTALL_COMPONENT)
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-     "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Debug/")
+     "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Debug/")
     if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-    file(INSTALL DESTINATION "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Debug" TYPE DIRECTORY FILES "D:/codes/flutter/project_model_ai/build/native_assets/windows/")
+    file(INSTALL DESTINATION "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Debug" TYPE DIRECTORY FILES "D:/Github/the-magnificent-three/flutter/build/native_assets/windows/")
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Pp][Rr][Oo][Ff][Ii][Ll][Ee])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-     "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Profile/")
+     "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Profile/")
     if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-    file(INSTALL DESTINATION "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Profile" TYPE DIRECTORY FILES "D:/codes/flutter/project_model_ai/build/native_assets/windows/")
+    file(INSTALL DESTINATION "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Profile" TYPE DIRECTORY FILES "D:/Github/the-magnificent-three/flutter/build/native_assets/windows/")
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-     "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Release/")
+     "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Release/")
     if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-    file(INSTALL DESTINATION "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Release" TYPE DIRECTORY FILES "D:/codes/flutter/project_model_ai/build/native_assets/windows/")
+    file(INSTALL DESTINATION "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Release" TYPE DIRECTORY FILES "D:/Github/the-magnificent-three/flutter/build/native_assets/windows/")
   endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Runtime" OR NOT CMAKE_INSTALL_COMPONENT)
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
     
-  file(REMOVE_RECURSE "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Debug/data/flutter_assets")
+  file(REMOVE_RECURSE "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Debug/data/flutter_assets")
   
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Pp][Rr][Oo][Ff][Ii][Ll][Ee])$")
     
-  file(REMOVE_RECURSE "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Profile/data/flutter_assets")
+  file(REMOVE_RECURSE "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Profile/data/flutter_assets")
   
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
     
-  file(REMOVE_RECURSE "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Release/data/flutter_assets")
+  file(REMOVE_RECURSE "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Release/data/flutter_assets")
   
   endif()
 endif()
@@ -258,58 +258,58 @@ endif()
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Runtime" OR NOT CMAKE_INSTALL_COMPONENT)
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-     "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Debug/data/flutter_assets")
+     "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Debug/data/flutter_assets")
     if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-    file(INSTALL DESTINATION "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Debug/data" TYPE DIRECTORY FILES "D:/codes/flutter/project_model_ai/build//flutter_assets")
+    file(INSTALL DESTINATION "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Debug/data" TYPE DIRECTORY FILES "D:/Github/the-magnificent-three/flutter/build//flutter_assets")
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Pp][Rr][Oo][Ff][Ii][Ll][Ee])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-     "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Profile/data/flutter_assets")
+     "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Profile/data/flutter_assets")
     if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-    file(INSTALL DESTINATION "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Profile/data" TYPE DIRECTORY FILES "D:/codes/flutter/project_model_ai/build//flutter_assets")
+    file(INSTALL DESTINATION "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Profile/data" TYPE DIRECTORY FILES "D:/Github/the-magnificent-three/flutter/build//flutter_assets")
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-     "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Release/data/flutter_assets")
+     "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Release/data/flutter_assets")
     if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-    file(INSTALL DESTINATION "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Release/data" TYPE DIRECTORY FILES "D:/codes/flutter/project_model_ai/build//flutter_assets")
+    file(INSTALL DESTINATION "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Release/data" TYPE DIRECTORY FILES "D:/Github/the-magnificent-three/flutter/build//flutter_assets")
   endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Runtime" OR NOT CMAKE_INSTALL_COMPONENT)
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Pp][Rr][Oo][Ff][Ii][Ll][Ee])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-     "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Profile/data/app.so")
+     "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Profile/data/app.so")
     if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-    file(INSTALL DESTINATION "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Profile/data" TYPE FILE FILES "D:/codes/flutter/project_model_ai/build/windows/app.so")
+    file(INSTALL DESTINATION "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Profile/data" TYPE FILE FILES "D:/Github/the-magnificent-three/flutter/build/windows/app.so")
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-     "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Release/data/app.so")
+     "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Release/data/app.so")
     if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
       message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-    file(INSTALL DESTINATION "D:/codes/flutter/project_model_ai/build/windows/x64/runner/Release/data" TYPE FILE FILES "D:/codes/flutter/project_model_ai/build/windows/app.so")
+    file(INSTALL DESTINATION "D:/Github/the-magnificent-three/flutter/build/windows/x64/runner/Release/data" TYPE FILE FILES "D:/Github/the-magnificent-three/flutter/build/windows/app.so")
   endif()
 endif()
 
@@ -328,6 +328,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "D:/codes/flutter/project_model_ai/build/windows/x64/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "D:/Github/the-magnificent-three/flutter/build/windows/x64/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

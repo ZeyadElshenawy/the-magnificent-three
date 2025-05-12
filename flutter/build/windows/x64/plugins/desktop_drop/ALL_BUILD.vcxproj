@@ -21,7 +21,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{20C713DB-ABB0-39B9-A7DA-55E66EB244D2}</ProjectGuid>
+    <ProjectGuid>{B19A1E0A-DB55-313C-B8D3-CAF273A7AFFB}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -88,11 +88,11 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\codes\flutter\project_model_ai\windows\flutter\ephemeral\.plugin_symlinks\desktop_drop\windows\CMakeLists.txt">
+    <CustomBuild Include="D:\Github\the-magnificent-three\flutter\windows\flutter\ephemeral\.plugin_symlinks\desktop_drop\windows\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/codes/flutter/project_model_ai/windows/flutter/ephemeral/.plugin_symlinks/desktop_drop/windows/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Github/the-magnificent-three/flutter/windows/flutter/ephemeral/.plugin_symlinks/desktop_drop/windows/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -SD:/codes/flutter/project_model_ai/windows -BD:/codes/flutter/project_model_ai/build/windows/x64 --check-stamp-file D:/codes/flutter/project_model_ai/build/windows/x64/plugins/desktop_drop/CMakeFiles/generate.stamp
+D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -SD:/Github/the-magnificent-three/flutter/windows -BD:/Github/the-magnificent-three/flutter/build/windows/x64 --check-stamp-file D:/Github/the-magnificent-three/flutter/build/windows/x64/plugins/desktop_drop/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -101,11 +101,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\codes\flutter\project_model_ai\build\windows\x64\plugins\desktop_drop\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Github\the-magnificent-three\flutter\build\windows\x64\plugins\desktop_drop\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Building Custom Rule D:/codes/flutter/project_model_ai/windows/flutter/ephemeral/.plugin_symlinks/desktop_drop/windows/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Building Custom Rule D:/Github/the-magnificent-three/flutter/windows/flutter/ephemeral/.plugin_symlinks/desktop_drop/windows/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">setlocal
-D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -SD:/codes/flutter/project_model_ai/windows -BD:/codes/flutter/project_model_ai/build/windows/x64 --check-stamp-file D:/codes/flutter/project_model_ai/build/windows/x64/plugins/desktop_drop/CMakeFiles/generate.stamp
+D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -SD:/Github/the-magnificent-three/flutter/windows -BD:/Github/the-magnificent-three/flutter/build/windows/x64 --check-stamp-file D:/Github/the-magnificent-three/flutter/build/windows/x64/plugins/desktop_drop/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -114,11 +114,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">D:\codes\flutter\project_model_ai\build\windows\x64\plugins\desktop_drop\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">D:\Github\the-magnificent-three\flutter\build\windows\x64\plugins\desktop_drop\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/codes/flutter/project_model_ai/windows/flutter/ephemeral/.plugin_symlinks/desktop_drop/windows/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Github/the-magnificent-three/flutter/windows/flutter/ephemeral/.plugin_symlinks/desktop_drop/windows/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -SD:/codes/flutter/project_model_ai/windows -BD:/codes/flutter/project_model_ai/build/windows/x64 --check-stamp-file D:/codes/flutter/project_model_ai/build/windows/x64/plugins/desktop_drop/CMakeFiles/generate.stamp
+D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -SD:/Github/the-magnificent-three/flutter/windows -BD:/Github/the-magnificent-three/flutter/build/windows/x64 --check-stamp-file D:/Github/the-magnificent-three/flutter/build/windows/x64/plugins/desktop_drop/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -127,21 +127,21 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\codes\flutter\project_model_ai\build\windows\x64\plugins\desktop_drop\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Github\the-magnificent-three\flutter\build\windows\x64\plugins\desktop_drop\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\codes\flutter\project_model_ai\build\windows\x64\ZERO_CHECK.vcxproj">
-      <Project>{B0452AE7-BF7D-3C5E-8D1C-2430B22D6F22}</Project>
+    <ProjectReference Include="D:\Github\the-magnificent-three\flutter\build\windows\x64\ZERO_CHECK.vcxproj">
+      <Project>{BB5A3FF5-A568-3A42-AC5D-6CD5D62607BF}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="D:\codes\flutter\project_model_ai\build\windows\x64\plugins\desktop_drop\desktop_drop_plugin.vcxproj">
-      <Project>{E521249B-C2CA-37FD-9A0A-67973A3215AF}</Project>
+    <ProjectReference Include="D:\Github\the-magnificent-three\flutter\build\windows\x64\plugins\desktop_drop\desktop_drop_plugin.vcxproj">
+      <Project>{559DA0A1-A288-3B0B-ACFC-AFDD61CC2D38}</Project>
       <Name>desktop_drop_plugin</Name>
     </ProjectReference>
   </ItemGroup>
