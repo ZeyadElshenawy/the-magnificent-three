@@ -90,25 +90,35 @@ class _ClassificationState extends State<Classification> {
       var responseData = await response.stream.bytesToString();
       if (response.statusCode == 200) {
         final result = jsonDecode(responseData);
-        String diagnosis = '';
-        switch (result['class']) {
-          case '0':
-            diagnosis = 'No cancer detected';
-            break;
-          case '1':
-            diagnosis = 'Cancer detected';
-            break;
-          case '2':
-            diagnosis = 'Suspected case ';
-            break;
-          default:
-            diagnosis = 'Unknown classification result';
+
+        // Map class index to tumor type name
+        Map<String, String> tumorTypes = {
+          '0': 'Meningioma',
+          '1': 'Glioma',
+          '2': 'Pituitary Tumor'
+        };
+
+        String classNumber = result['class'] ?? 'Unknown';
+        String tumorType = tumorTypes[classNumber] ?? 'Unknown Type';
+
+        // Add confidence level description
+        String confidenceLevel = '';
+        double confidence = (result['confidence'] * 100);
+        if (confidence >= 90) {
+          confidenceLevel = 'Very High Confidence';
+        } else if (confidence >= 70) {
+          confidenceLevel = 'High Confidence';
+        } else if (confidence >= 50) {
+          confidenceLevel = 'Moderate Confidence';
+        } else {
+          confidenceLevel = 'Low Confidence';
         }
-        String patinName = _nameController.text.isNotEmpty
+
+        String patientName = _nameController.text.isNotEmpty
             ? _nameController.text
-            : "Unnamed Patin";
+            : "Unnamed Patient";
         _addToHistory(
-          'Patin: $patinName\nDiagnosis: $diagnosis (Confidence: ${(result['confidence'] * 100).toStringAsFixed(2)}%)',
+          'Patient: $patientName\nTumor Type: $tumorType (Class $classNumber)\nConfidence Level: $confidenceLevel (${confidence.toStringAsFixed(2)}%)',
           false,
           imagePath: _image!.path,
         );
@@ -172,7 +182,7 @@ class _ClassificationState extends State<Classification> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Image Classification',
+                          'Brain Tumor Classification',
                           style: TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
@@ -183,7 +193,7 @@ class _ClassificationState extends State<Classification> {
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          'Upload your image to classify it',
+                          'Upload a brain MRI image for tumor classification',
                           style: TextStyle(
                             fontSize: 14,
                             color: widget.darkMode
@@ -268,7 +278,7 @@ class _ClassificationState extends State<Classification> {
                                 ),
                                 controller: _nameController,
                                 decoration: InputDecoration(
-                                  hintText: 'Enter Patin fish name',
+                                  hintText: 'Enter patient name or ID',
                                   hintStyle: TextStyle(
                                     color: widget.darkMode
                                         ? AppColors.lightTheme.withOpacity(0.5)

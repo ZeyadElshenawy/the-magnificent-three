@@ -72,7 +72,7 @@ class _RegressionState extends State<Regression> {
 
     try {
       final response = await http.post(
-        Uri.parse('http://127.0.0.1:5000/predict'),
+        Uri.parse('http://127.0.0.1:5001/predict'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({'features': features}),
       );
