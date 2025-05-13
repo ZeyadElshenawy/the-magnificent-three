@@ -22,11 +22,14 @@ class _ClassificationState extends State<Classification> {
   bool _showRightBar = false;
   final TextEditingController _nameController = TextEditingController();
   List<Map<String, dynamic>> _history = [];
+  String _selectedModel = 'svc'; // Default model
+  List<String> _availableModels = [];
 
   @override
   void initState() {
     super.initState();
     _loadHistory();
+    _fetchAvailableModels();
   }
 
   @override
@@ -64,11 +67,25 @@ class _ClassificationState extends State<Classification> {
     _saveHistory();
   }
 
+  Future<void> _fetchAvailableModels() async {
+    try {
+      final response =
+          await http.get(Uri.parse('http://127.0.0.1:5000/available_models'));
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+        setState(() {
+          _availableModels = List<String>.from(data['models']);
+        });
+      }
+    } catch (e) {
+      print('Error fetching available models: $e');
+    }
+  }
+
   Future<void> sendImageForClassification() async {
     if (_image == null) return;
 
     try {
-      // Create multipart request
       var request = http.MultipartRequest(
         'POST',
         Uri.parse('http://127.0.0.1:5000/classify'),
@@ -84,6 +101,9 @@ class _ClassificationState extends State<Classification> {
               : _image!.path.split('/').last,
         ),
       );
+
+      // Add selected model
+      request.fields['model'] = _selectedModel;
 
       // Send request
       var response = await request.send();
@@ -269,6 +289,7 @@ class _ClassificationState extends State<Classification> {
                         Row(
                           children: [
                             Expanded(
+                              flex: 2,
                               child: TextField(
                                 style: TextStyle(
                                   color: widget.darkMode
@@ -317,6 +338,62 @@ class _ClassificationState extends State<Classification> {
                                               .withOpacity(0.3),
                                       width: 2,
                                     ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            Expanded(
+                              flex: 1,
+                              child: Container(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 12),
+                                decoration: BoxDecoration(
+                                  color: widget.darkMode
+                                      ? AppColors.primaryColor.withOpacity(0.2)
+                                      : AppColors.lightTheme.withOpacity(0.2),
+                                  borderRadius: BorderRadius.circular(5),
+                                  border: Border.all(
+                                    color: widget.darkMode
+                                        ? AppColors.lightTheme.withOpacity(0.1)
+                                        : AppColors.primaryColor
+                                            .withOpacity(0.1),
+                                  ),
+                                ),
+                                child: DropdownButtonHideUnderline(
+                                  child: DropdownButton<String>(
+                                    value: _selectedModel,
+                                    isExpanded: true,
+                                    dropdownColor: widget.darkMode
+                                        ? AppColors.primaryColor
+                                        : AppColors.lightTheme,
+                                    style: TextStyle(
+                                      color: widget.darkMode
+                                          ? AppColors.lightTheme
+                                          : AppColors.primaryColor,
+                                    ),
+                                    items: _availableModels.map((String model) {
+                                      return DropdownMenuItem<String>(
+                                        value: model,
+                                        child: Text(
+                                          model
+                                              .replaceAll('_', ' ')
+                                              .toUpperCase(),
+                                          style: TextStyle(
+                                            color: widget.darkMode
+                                                ? AppColors.lightTheme
+                                                : AppColors.primaryColor,
+                                          ),
+                                        ),
+                                      );
+                                    }).toList(),
+                                    onChanged: (String? newValue) {
+                                      if (newValue != null) {
+                                        setState(() {
+                                          _selectedModel = newValue;
+                                        });
+                                      }
+                                    },
                                   ),
                                 ),
                               ),

@@ -7,13 +7,18 @@ import io
 
 app = Flask(__name__)
 
-# تحميل النموذج
+# Load all models
 model_path = os.path.join(os.path.dirname(__file__), 'Models/classification')
-model = load(os.path.join(model_path, 'random_forest.joblib'))
+models = {
+    'decision_tree': load(os.path.join(model_path, 'dt_model.pkl')),
+    'logistic_regression': load(os.path.join(model_path, 'logreg_model.pkl')),
+    'random_forest': load(os.path.join(model_path, 'rf_model.pkl')),
+    'svc': load(os.path.join(model_path, 'svc_model.pkl'))
+}
 
-# دالة لتحويل الصورة إلى مصفوفة مناسبة للنموذج
+# Function to preprocess image
 def preprocess_image(image_bytes):
-    image = Image.open(io.BytesIO(image_bytes)).convert('L')  # تحويل إلى رمادي لو النموذج يتوقع كده
+    image = Image.open(io.BytesIO(image_bytes)).convert('L')  
     image = image.resize((64, 64))  
     image_array = np.array(image).reshape(1, -1) / 255.0  
     return image_array
@@ -23,11 +28,17 @@ def predict():
     if 'image' not in request.files:
         return jsonify({'error': 'No image file provided'}), 400
 
+    # Get the selected model from the request
+    model_name = request.form.get('model', 'svc')  # Default to SVC if not specified
+    if model_name not in models:
+        return jsonify({'error': f'Invalid model name. Available models: {list(models.keys())}'}), 400
+
     image_file = request.files['image']
     image_bytes = image_file.read()
 
     try:
         features = preprocess_image(image_bytes)
+        model = models[model_name]
         prediction = model.predict(features)
         
         # Define class names mapping
@@ -51,10 +62,17 @@ def predict():
         return jsonify({
             'class': str(class_index),
             'class_name': class_name,
-            'confidence': confidence
+            'confidence': confidence,
+            'model_used': model_name
         })
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+@app.route('/available_models', methods=['GET'])
+def get_available_models():
+    return jsonify({
+        'models': list(models.keys())
+    })
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))
