@@ -23,48 +23,92 @@ class FlaskServerService {
       // Get absolute paths to Python scripts
       final String mlModelPath = path.join(_projectRoot, 'ML_Model');
       final String classificationScript =
-          path.join(mlModelPath, 'FlskForClassification.py');
+          path.join(mlModelPath, 'FlaskForClassification.py');
       final String regressionScript =
           path.join(mlModelPath, 'FlaskForRegression.py');
 
+      // Print current directory and paths for debugging
+      print('Current directory: ${Directory.current.path}');
+      print('ML Model path: $mlModelPath');
+      print('Classification script path: $classificationScript');
+      print('Regression script path: $regressionScript');
+
       // Verify that the scripts exist
-      if (!File(classificationScript).existsSync() ||
-          !File(regressionScript).existsSync()) {
-        print('Flask server scripts not found at: $mlModelPath');
+      if (!File(classificationScript).existsSync()) {
+        print('Classification script not found at: $classificationScript');
+        return false;
+      }
+      if (!File(regressionScript).existsSync()) {
+        print('Regression script not found at: $regressionScript');
         return false;
       }
 
-      print('Starting Classification server from: $classificationScript');
-      _classificationProcess = await Process.start(
-        'python',
-        [classificationScript],
-        workingDirectory: mlModelPath,
-      );
+      // Try to start Classification server
+      print('Starting Classification server...');
+      try {
+        _classificationProcess = await Process.start(
+          'python',
+          [classificationScript],
+          workingDirectory: mlModelPath,
+        );
+        print('Classification server process started');
+      } catch (e) {
+        print('Error starting Classification server: $e');
+        return false;
+      }
 
-      print('Starting Regression server from: $regressionScript');
-      _regressionProcess = await Process.start(
-        'python',
-        [regressionScript],
-        workingDirectory: mlModelPath,
-      );
+      // Try to start Regression server
+      print('Starting Regression server...');
+      try {
+        _regressionProcess = await Process.start(
+          'python',
+          [regressionScript],
+          workingDirectory: mlModelPath,
+        );
+        print('Regression server process started');
+      } catch (e) {
+        print('Error starting Regression server: $e');
+        stopServers(); // Stop classification server if regression fails
+        return false;
+      }
 
       // Listen for Classification server output
-      _classificationProcess!.stdout.listen((event) {
-        print('Classification Server: ${String.fromCharCodes(event)}');
-      });
+      _classificationProcess!.stdout.listen(
+        (event) {
+          print('Classification Server: ${String.fromCharCodes(event)}');
+        },
+        onError: (error) {
+          print('Classification Server Error: $error');
+        },
+      );
 
-      _classificationProcess!.stderr.listen((event) {
-        print('Classification Server Error: ${String.fromCharCodes(event)}');
-      });
+      _classificationProcess!.stderr.listen(
+        (event) {
+          print('Classification Server Error: ${String.fromCharCodes(event)}');
+        },
+        onError: (error) {
+          print('Classification Server Error: $error');
+        },
+      );
 
       // Listen for Regression server output
-      _regressionProcess!.stdout.listen((event) {
-        print('Regression Server: ${String.fromCharCodes(event)}');
-      });
+      _regressionProcess!.stdout.listen(
+        (event) {
+          print('Regression Server: ${String.fromCharCodes(event)}');
+        },
+        onError: (error) {
+          print('Regression Server Error: $error');
+        },
+      );
 
-      _regressionProcess!.stderr.listen((event) {
-        print('Regression Server Error: ${String.fromCharCodes(event)}');
-      });
+      _regressionProcess!.stderr.listen(
+        (event) {
+          print('Regression Server Error: ${String.fromCharCodes(event)}');
+        },
+        onError: (error) {
+          print('Regression Server Error: $error');
+        },
+      );
 
       // Wait for servers to start
       await Future.delayed(const Duration(seconds: 5));
