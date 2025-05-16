@@ -1,6 +1,6 @@
-^D:\GITHUB\THE-MAGNIFICENT-THREE\FLUTTER\WINDOWS\CMAKELISTS.TXT
+^D:\CODES\FLUTTER\NEW FOLDER\FLUTTER\WINDOWS\CMAKELISTS.TXT
 setlocal
-D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -SD:/Github/the-magnificent-three/flutter/windows -BD:/Github/the-magnificent-three/flutter/build/windows/x64 --check-stamp-file D:/Github/the-magnificent-three/flutter/build/windows/x64/CMakeFiles/generate.stamp
+D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe "-SD:/codes/flutter/New folder/flutter/windows" "-BD:/codes/flutter/New folder/flutter/build/windows/x64" --check-stamp-file "D:/codes/flutter/New folder/flutter/build/windows/x64/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

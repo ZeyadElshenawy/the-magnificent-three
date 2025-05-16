@@ -101,10 +101,10 @@ packages:
     dependency: "direct main"
     description:
       name: desktop_drop
-      sha256: bd21017e0415632c85f6b813c846bc8c9811742507776dcf6abf91a14d946e98
+      sha256: d55a010fe46c8e8fcff4ea4b451a9ff84a162217bdb3b2a0aa1479776205e15d
       url: "https://pub.dev"
     source: hosted
-    version: "0.6.0"
+    version: "0.4.4"
   dotted_border:
     dependency: "direct main"
     description:
@@ -209,7 +209,7 @@ packages:
     source: sdk
     version: "0.0.0"
   http:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: http
       sha256: "2c11f3f94c687ee9bad77c171151672986360b2b001d109814ee7140b2cf261b"
@@ -549,14 +549,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.4.0"
-  universal_platform:
-    dependency: transitive
-    description:
-      name: universal_platform
-      sha256: "64e16458a0ea9b99260ceb5467a214c1f298d647c659af1bff6d3bf82536b1ec"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.1.0"
   vector_math:
     dependency: transitive
     description:

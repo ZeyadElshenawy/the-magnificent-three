@@ -21,7 +21,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{B19A1E0A-DB55-313C-B8D3-CAF273A7AFFB}</ProjectGuid>
+    <ProjectGuid>{1C18AFFF-5CFB-3A28-BAA2-6028CD923083}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -88,11 +88,11 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\Github\the-magnificent-three\flutter\windows\CMakeLists.txt">
+    <CustomBuild Include="D:\codes\flutter\New folder\flutter\windows\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Github/the-magnificent-three/flutter/windows/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/codes/flutter/New folder/flutter/windows/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -SD:/Github/the-magnificent-three/flutter/windows -BD:/Github/the-magnificent-three/flutter/build/windows/x64 --check-stamp-file D:/Github/the-magnificent-three/flutter/build/windows/x64/CMakeFiles/generate.stamp
+D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe "-SD:/codes/flutter/New folder/flutter/windows" "-BD:/codes/flutter/New folder/flutter/build/windows/x64" --check-stamp-file "D:/codes/flutter/New folder/flutter/build/windows/x64/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -100,12 +100,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Github\the-magnificent-three\flutter\build\windows\x64\CMakeFiles\3.30.5-msvc23\CMakeCXXCompiler.cmake;D:\Github\the-magnificent-three\flutter\build\windows\x64\CMakeFiles\3.30.5-msvc23\CMakeRCCompiler.cmake;D:\Github\the-magnificent-three\flutter\build\windows\x64\CMakeFiles\3.30.5-msvc23\CMakeSystem.cmake;D:\Github\the-magnificent-three\flutter\windows\flutter\generated_plugins.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeCXXInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeGenericSystem.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeInitializeConfigs.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeLanguageInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeRCInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInitialize.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Compiler\MSVC-CXX.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Compiler\MSVC.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows-Initialize.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-CXX.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Github\the-magnificent-three\flutter\build\windows\x64\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeCXXInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeGenericSystem.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeInitializeConfigs.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeLanguageInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeRCInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInitialize.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Compiler\MSVC-CXX.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Compiler\MSVC.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows-Initialize.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-CXX.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\WindowsPaths.cmake;D:\codes\flutter\New folder\flutter\build\windows\x64\CMakeFiles\3.30.5-msvc23\CMakeCXXCompiler.cmake;D:\codes\flutter\New folder\flutter\build\windows\x64\CMakeFiles\3.30.5-msvc23\CMakeRCCompiler.cmake;D:\codes\flutter\New folder\flutter\build\windows\x64\CMakeFiles\3.30.5-msvc23\CMakeSystem.cmake;D:\codes\flutter\New folder\flutter\windows\flutter\generated_plugins.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\codes\flutter\New folder\flutter\build\windows\x64\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Building Custom Rule D:/Github/the-magnificent-three/flutter/windows/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Building Custom Rule D:/codes/flutter/New folder/flutter/windows/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">setlocal
-D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -SD:/Github/the-magnificent-three/flutter/windows -BD:/Github/the-magnificent-three/flutter/build/windows/x64 --check-stamp-file D:/Github/the-magnificent-three/flutter/build/windows/x64/CMakeFiles/generate.stamp
+D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe "-SD:/codes/flutter/New folder/flutter/windows" "-BD:/codes/flutter/New folder/flutter/build/windows/x64" --check-stamp-file "D:/codes/flutter/New folder/flutter/build/windows/x64/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -113,12 +113,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">D:\Github\the-magnificent-three\flutter\build\windows\x64\CMakeFiles\3.30.5-msvc23\CMakeCXXCompiler.cmake;D:\Github\the-magnificent-three\flutter\build\windows\x64\CMakeFiles\3.30.5-msvc23\CMakeRCCompiler.cmake;D:\Github\the-magnificent-three\flutter\build\windows\x64\CMakeFiles\3.30.5-msvc23\CMakeSystem.cmake;D:\Github\the-magnificent-three\flutter\windows\flutter\generated_plugins.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeCXXInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeGenericSystem.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeInitializeConfigs.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeLanguageInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeRCInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInitialize.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Compiler\MSVC-CXX.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Compiler\MSVC.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows-Initialize.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-CXX.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">D:\Github\the-magnificent-three\flutter\build\windows\x64\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeCXXInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeGenericSystem.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeInitializeConfigs.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeLanguageInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeRCInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInitialize.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Compiler\MSVC-CXX.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Compiler\MSVC.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows-Initialize.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-CXX.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\WindowsPaths.cmake;D:\codes\flutter\New folder\flutter\build\windows\x64\CMakeFiles\3.30.5-msvc23\CMakeCXXCompiler.cmake;D:\codes\flutter\New folder\flutter\build\windows\x64\CMakeFiles\3.30.5-msvc23\CMakeRCCompiler.cmake;D:\codes\flutter\New folder\flutter\build\windows\x64\CMakeFiles\3.30.5-msvc23\CMakeSystem.cmake;D:\codes\flutter\New folder\flutter\windows\flutter\generated_plugins.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">D:\codes\flutter\New folder\flutter\build\windows\x64\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Github/the-magnificent-three/flutter/windows/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/codes/flutter/New folder/flutter/windows/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -SD:/Github/the-magnificent-three/flutter/windows -BD:/Github/the-magnificent-three/flutter/build/windows/x64 --check-stamp-file D:/Github/the-magnificent-three/flutter/build/windows/x64/CMakeFiles/generate.stamp
+D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe "-SD:/codes/flutter/New folder/flutter/windows" "-BD:/codes/flutter/New folder/flutter/build/windows/x64" --check-stamp-file "D:/codes/flutter/New folder/flutter/build/windows/x64/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -126,42 +126,42 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Github\the-magnificent-three\flutter\build\windows\x64\CMakeFiles\3.30.5-msvc23\CMakeCXXCompiler.cmake;D:\Github\the-magnificent-three\flutter\build\windows\x64\CMakeFiles\3.30.5-msvc23\CMakeRCCompiler.cmake;D:\Github\the-magnificent-three\flutter\build\windows\x64\CMakeFiles\3.30.5-msvc23\CMakeSystem.cmake;D:\Github\the-magnificent-three\flutter\windows\flutter\generated_plugins.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeCXXInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeGenericSystem.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeInitializeConfigs.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeLanguageInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeRCInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInitialize.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Compiler\MSVC-CXX.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Compiler\MSVC.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows-Initialize.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-CXX.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Github\the-magnificent-three\flutter\build\windows\x64\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeCXXInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeGenericSystem.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeInitializeConfigs.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeLanguageInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeRCInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInformation.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInitialize.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Compiler\MSVC-CXX.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Compiler\MSVC.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows-Initialize.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-CXX.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\Windows.cmake;D:\a\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.30\Modules\Platform\WindowsPaths.cmake;D:\codes\flutter\New folder\flutter\build\windows\x64\CMakeFiles\3.30.5-msvc23\CMakeCXXCompiler.cmake;D:\codes\flutter\New folder\flutter\build\windows\x64\CMakeFiles\3.30.5-msvc23\CMakeRCCompiler.cmake;D:\codes\flutter\New folder\flutter\build\windows\x64\CMakeFiles\3.30.5-msvc23\CMakeSystem.cmake;D:\codes\flutter\New folder\flutter\windows\flutter\generated_plugins.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\codes\flutter\New folder\flutter\build\windows\x64\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\Github\the-magnificent-three\flutter\build\windows\x64\ZERO_CHECK.vcxproj">
-      <Project>{BB5A3FF5-A568-3A42-AC5D-6CD5D62607BF}</Project>
+    <ProjectReference Include="D:\codes\flutter\New folder\flutter\build\windows\x64\ZERO_CHECK.vcxproj">
+      <Project>{4AC11393-BE92-39BA-A2D1-9CA81AEC7F0D}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="D:\Github\the-magnificent-three\flutter\build\windows\x64\plugins\bitsdojo_window_windows\bitsdojo_window_windows_plugin.vcxproj">
-      <Project>{13C51F1B-A2EC-30EB-BCCC-DA6473741C66}</Project>
+    <ProjectReference Include="D:\codes\flutter\New folder\flutter\build\windows\x64\plugins\bitsdojo_window_windows\bitsdojo_window_windows_plugin.vcxproj">
+      <Project>{5DD0CC91-0152-3AFD-AD74-EEB2FF32AA11}</Project>
       <Name>bitsdojo_window_windows_plugin</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\Github\the-magnificent-three\flutter\build\windows\x64\plugins\desktop_drop\desktop_drop_plugin.vcxproj">
-      <Project>{559DA0A1-A288-3B0B-ACFC-AFDD61CC2D38}</Project>
+    <ProjectReference Include="D:\codes\flutter\New folder\flutter\build\windows\x64\plugins\desktop_drop\desktop_drop_plugin.vcxproj">
+      <Project>{6AB972E3-A493-34E2-8774-610E7C1FA0FD}</Project>
       <Name>desktop_drop_plugin</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\Github\the-magnificent-three\flutter\build\windows\x64\plugins\file_selector_windows\file_selector_windows_plugin.vcxproj">
-      <Project>{E5122B88-07A8-347C-B111-54CE9137141A}</Project>
+    <ProjectReference Include="D:\codes\flutter\New folder\flutter\build\windows\x64\plugins\file_selector_windows\file_selector_windows_plugin.vcxproj">
+      <Project>{94095836-7130-3159-A88A-75D0F282DB22}</Project>
       <Name>file_selector_windows_plugin</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\Github\the-magnificent-three\flutter\build\windows\x64\flutter\flutter_wrapper_app.vcxproj">
-      <Project>{4D3BEE4A-D48C-33EA-8156-6BF5BCBE1714}</Project>
+    <ProjectReference Include="D:\codes\flutter\New folder\flutter\build\windows\x64\flutter\flutter_wrapper_app.vcxproj">
+      <Project>{19797775-A4F4-3FB5-9325-F8868DC7186E}</Project>
       <Name>flutter_wrapper_app</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\Github\the-magnificent-three\flutter\build\windows\x64\flutter\flutter_wrapper_plugin.vcxproj">
-      <Project>{5456B4CC-DC4E-3D51-8F4F-C6A5B2CCCE90}</Project>
+    <ProjectReference Include="D:\codes\flutter\New folder\flutter\build\windows\x64\flutter\flutter_wrapper_plugin.vcxproj">
+      <Project>{694520EE-CDD1-3A44-A194-564FBC110D5A}</Project>
       <Name>flutter_wrapper_plugin</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\Github\the-magnificent-three\flutter\build\windows\x64\runner\project_model_ai.vcxproj">
-      <Project>{1F7B3175-0FD8-328C-B0A6-E2E45E7280FB}</Project>
+    <ProjectReference Include="D:\codes\flutter\New folder\flutter\build\windows\x64\runner\project_model_ai.vcxproj">
+      <Project>{FAB25D1C-C599-31A1-B5B1-9654585B9369}</Project>
       <Name>project_model_ai</Name>
     </ProjectReference>
   </ItemGroup>

@@ -1,9 +1,4 @@
 # CMake generation dependency list for this directory.
-D:/Github/the-magnificent-three/flutter/build/windows/x64/CMakeFiles/3.30.5-msvc23/CMakeCXXCompiler.cmake
-D:/Github/the-magnificent-three/flutter/build/windows/x64/CMakeFiles/3.30.5-msvc23/CMakeRCCompiler.cmake
-D:/Github/the-magnificent-three/flutter/build/windows/x64/CMakeFiles/3.30.5-msvc23/CMakeSystem.cmake
-D:/Github/the-magnificent-three/flutter/windows/CMakeLists.txt
-D:/Github/the-magnificent-three/flutter/windows/flutter/generated_plugins.cmake
 D:/a/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeCXXInformation.cmake
 D:/a/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake
 D:/a/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeGenericSystem.cmake
@@ -20,3 +15,8 @@ D:/a/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules
 D:/a/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/Platform/Windows-MSVC.cmake
 D:/a/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/Platform/Windows.cmake
 D:/a/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/Platform/WindowsPaths.cmake
+D:/codes/flutter/New folder/flutter/build/windows/x64/CMakeFiles/3.30.5-msvc23/CMakeCXXCompiler.cmake
+D:/codes/flutter/New folder/flutter/build/windows/x64/CMakeFiles/3.30.5-msvc23/CMakeRCCompiler.cmake
+D:/codes/flutter/New folder/flutter/build/windows/x64/CMakeFiles/3.30.5-msvc23/CMakeSystem.cmake
+D:/codes/flutter/New folder/flutter/windows/CMakeLists.txt
+D:/codes/flutter/New folder/flutter/windows/flutter/generated_plugins.cmake

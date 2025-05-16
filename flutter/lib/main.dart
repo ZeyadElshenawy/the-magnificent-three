@@ -3,15 +3,23 @@ import 'package:flutter/material.dart';
 import 'package:project_model_ai/UI_UX/splash_screen.dart';
 import 'package:project_model_ai/widget/leftBar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:project_model_ai/service/flask_server.dart';
+import 'package:project_model_ai/services/flask_service.dart';
 
 bool isDarkMode = false;
+
+// Global instance of FlaskService
+final FlaskService flaskService = FlaskService();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
   isDarkMode = prefs.getBool('isDarkMode') ?? false;
-  await FlaskServerService.startServers();
+
+  // Start both servers when app launches
+  await Future.wait([
+    flaskService.startClassificationServer(),
+    flaskService.startRegressionServer(),
+  ]);
 
   runApp(const MyApp());
 
@@ -35,7 +43,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void dispose() {
-    FlaskServerService.stopServers();
+    // Stop both servers when app closes
+    flaskService.stopAllServers();
     super.dispose();
   }
 

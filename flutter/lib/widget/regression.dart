@@ -3,6 +3,8 @@ import 'package:project_model_ai/UI_UX/Colors.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:project_model_ai/services/flask_service.dart';
+import 'package:project_model_ai/main.dart';
 
 class Regression extends StatefulWidget {
   final bool darkMode;
@@ -13,6 +15,7 @@ class Regression extends StatefulWidget {
 }
 
 class _RegressionState extends State<Regression> {
+  bool _isServerRunning = false;
   bool _showRightBar = false;
   List<Map<String, dynamic>> _history = [];
   final int requiredFeatures = 8;
@@ -25,6 +28,7 @@ class _RegressionState extends State<Regression> {
   void initState() {
     super.initState();
     _loadHistory();
+    _checkServerStatus();
   }
 
   Future<void> _loadHistory() async {
@@ -63,7 +67,19 @@ class _RegressionState extends State<Regression> {
     super.dispose();
   }
 
+  void _checkServerStatus() {
+    setState(() {
+      _isServerRunning = flaskService.isRegressionRunning;
+    });
+  }
+
   Future<void> sendRegressionData(List<double> features) async {
+    if (!_isServerRunning) {
+      _addToHistory(
+          'Server is not running. Please wait for the server to start.', true);
+      return;
+    }
+
     if (features.length != requiredFeatures) {
       _addToHistory(
           'Error: Exactly $requiredFeatures features are required', true);
@@ -79,7 +95,9 @@ class _RegressionState extends State<Regression> {
 
       if (response.statusCode == 200) {
         final result = jsonDecode(response.body);
-        _addToHistory('Prediction: ${result['prediction']}', false);
+        _addToHistory(
+            'Prediction: ${result['prediction'] == 1 ? 'Positive' : 'Negative'} for diabetes',
+            false);
         // Clear all text fields after successful prediction
         for (var controller in _controllers) {
           controller.clear();
@@ -121,6 +139,38 @@ class _RegressionState extends State<Regression> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [
+          // Add server status indicator
+          Center(
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+              decoration: BoxDecoration(
+                color: _isServerRunning
+                    ? Colors.green.withOpacity(0.2)
+                    : Colors.red.withOpacity(0.2),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.circle,
+                    size: 12,
+                    color: _isServerRunning ? Colors.green : Colors.red,
+                  ),
+                  const SizedBox(width: 8),
+                  Text(
+                    _isServerRunning ? 'Server Online' : 'Server Offline',
+                    style: TextStyle(
+                      color: widget.darkMode
+                          ? AppColors.lightTheme
+                          : AppColors.primaryColor,
+                      fontSize: 12,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(width: 16),
           IconButton(
             icon: Icon(
               Icons.history,

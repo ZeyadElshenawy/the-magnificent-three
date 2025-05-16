@@ -6,6 +6,8 @@ import 'package:desktop_drop/desktop_drop.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:project_model_ai/services/flask_service.dart';
+import 'package:project_model_ai/main.dart';
 
 class Classification extends StatefulWidget {
   final bool darkMode;
@@ -22,19 +24,28 @@ class _ClassificationState extends State<Classification> {
   bool _showRightBar = false;
   final TextEditingController _nameController = TextEditingController();
   List<Map<String, dynamic>> _history = [];
-  String _selectedModel = 'svc'; // Default model
-  List<String> _availableModels = [];
+  String _selectedModel = 'svc';
+  final FlaskService _flaskService = FlaskService();
+  bool _isServerRunning = false;
+
+  final List<Map<String, String>> _models = [
+    {'value': 'svc', 'label': 'Support Vector Machine'},
+    {'value': 'random_forest', 'label': 'Random Forest'},
+    {'value': 'decision_tree', 'label': 'Decision Tree'},
+    {'value': 'logistic_regression', 'label': 'Logistic Regression'},
+  ];
 
   @override
   void initState() {
     super.initState();
     _loadHistory();
-    _fetchAvailableModels();
+    _checkServerStatus();
   }
 
   @override
   void dispose() {
     _nameController.dispose();
+    _flaskService.stopClassificationServer();
     super.dispose();
   }
 
@@ -67,23 +78,19 @@ class _ClassificationState extends State<Classification> {
     _saveHistory();
   }
 
-  Future<void> _fetchAvailableModels() async {
-    try {
-      final response =
-          await http.get(Uri.parse('http://127.0.0.1:5000/available_models'));
-      if (response.statusCode == 200) {
-        final data = jsonDecode(response.body);
-        setState(() {
-          _availableModels = List<String>.from(data['models']);
-        });
-      }
-    } catch (e) {
-      print('Error fetching available models: $e');
-    }
+  void _checkServerStatus() {
+    setState(() {
+      _isServerRunning = flaskService.isClassificationRunning;
+    });
   }
 
   Future<void> sendImageForClassification() async {
     if (_image == null) return;
+    if (!_isServerRunning) {
+      _addToHistory(
+          'Server is not running. Please wait for the server to start.', true);
+      return;
+    }
 
     try {
       var request = http.MultipartRequest(
@@ -102,7 +109,7 @@ class _ClassificationState extends State<Classification> {
         ),
       );
 
-      // Add selected model
+      // Add model selection
       request.fields['model'] = _selectedModel;
 
       // Send request
@@ -110,38 +117,21 @@ class _ClassificationState extends State<Classification> {
       var responseData = await response.stream.bytesToString();
       if (response.statusCode == 200) {
         final result = jsonDecode(responseData);
-
-        // Map class index to tumor type name
-        Map<String, String> tumorTypes = {
-          '0': 'Meningioma',
-          '1': 'Glioma',
-          '2': 'Pituitary Tumor'
-        };
-
-        String classNumber = result['class'] ?? 'Unknown';
-        String tumorType = tumorTypes[classNumber] ?? 'Unknown Type';
-
-        // Add confidence level description
-        String confidenceLevel = '';
-        double confidence = (result['confidence'] * 100);
-        if (confidence >= 90) {
-          confidenceLevel = 'Very High Confidence';
-        } else if (confidence >= 70) {
-          confidenceLevel = 'High Confidence';
-        } else if (confidence >= 50) {
-          confidenceLevel = 'Moderate Confidence';
-        } else {
-          confidenceLevel = 'Low Confidence';
-        }
-
-        String patientName = _nameController.text.isNotEmpty
+        String diagnosis = result['class_name'];
+        String patinName = _nameController.text.isNotEmpty
             ? _nameController.text
             : "Unnamed Patient";
+
+        // Update history message to include model used
+        String modelUsed = _models.firstWhere(
+                (m) => m['value'] == result['model_used'])['label'] ??
+            result['model_used'];
         _addToHistory(
-          'Patient: $patientName\nTumor Type: $tumorType (Class $classNumber)\nConfidence Level: $confidenceLevel (${confidence.toStringAsFixed(2)}%)',
+          'Patient: $patinName\nDiagnosis: $diagnosis\nConfidence: ${(result['confidence'] * 100).toStringAsFixed(2)}%\nModel Used: $modelUsed',
           false,
           imagePath: _image!.path,
         );
+
         // Clear image after successful classification
         setState(() {
           _image = null;
@@ -187,6 +177,37 @@ class _ClassificationState extends State<Classification> {
             },
           ),
           const SizedBox(width: 16),
+          // Add server status indicator
+          Center(
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+              decoration: BoxDecoration(
+                color: _isServerRunning
+                    ? Colors.green.withOpacity(0.2)
+                    : Colors.red.withOpacity(0.2),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.circle,
+                    size: 12,
+                    color: _isServerRunning ? Colors.green : Colors.red,
+                  ),
+                  const SizedBox(width: 8),
+                  Text(
+                    _isServerRunning ? 'Server Online' : 'Server Offline',
+                    style: TextStyle(
+                      color: widget.darkMode
+                          ? AppColors.lightTheme
+                          : AppColors.primaryColor,
+                      fontSize: 12,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
       body: Row(
@@ -202,7 +223,7 @@ class _ClassificationState extends State<Classification> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Brain Tumor Classification',
+                          'Image Classification',
                           style: TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
@@ -213,7 +234,7 @@ class _ClassificationState extends State<Classification> {
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          'Upload a brain MRI image for tumor classification',
+                          'Upload your image to classify it',
                           style: TextStyle(
                             fontSize: 14,
                             color: widget.darkMode
@@ -289,7 +310,6 @@ class _ClassificationState extends State<Classification> {
                         Row(
                           children: [
                             Expanded(
-                              flex: 2,
                               child: TextField(
                                 style: TextStyle(
                                   color: widget.darkMode
@@ -299,7 +319,7 @@ class _ClassificationState extends State<Classification> {
                                 ),
                                 controller: _nameController,
                                 decoration: InputDecoration(
-                                  hintText: 'Enter patient name or ID',
+                                  hintText: 'Enter Patin fish name',
                                   hintStyle: TextStyle(
                                     color: widget.darkMode
                                         ? AppColors.lightTheme.withOpacity(0.5)
@@ -343,59 +363,39 @@ class _ClassificationState extends State<Classification> {
                               ),
                             ),
                             const SizedBox(width: 8),
-                            Expanded(
-                              flex: 1,
-                              child: Container(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 12),
-                                decoration: BoxDecoration(
+                            Container(
+                              decoration: BoxDecoration(
+                                color: widget.darkMode
+                                    ? AppColors.lightTheme.withOpacity(0.1)
+                                    : AppColors.primaryColor.withOpacity(0.1),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 12),
+                              child: DropdownButton<String>(
+                                value: _selectedModel,
+                                dropdownColor: widget.darkMode
+                                    ? AppColors.primaryColor
+                                    : AppColors.lightTheme,
+                                style: TextStyle(
                                   color: widget.darkMode
-                                      ? AppColors.primaryColor.withOpacity(0.2)
-                                      : AppColors.lightTheme.withOpacity(0.2),
-                                  borderRadius: BorderRadius.circular(5),
-                                  border: Border.all(
-                                    color: widget.darkMode
-                                        ? AppColors.lightTheme.withOpacity(0.1)
-                                        : AppColors.primaryColor
-                                            .withOpacity(0.1),
-                                  ),
+                                      ? AppColors.lightTheme
+                                      : AppColors.primaryColor,
                                 ),
-                                child: DropdownButtonHideUnderline(
-                                  child: DropdownButton<String>(
-                                    value: _selectedModel,
-                                    isExpanded: true,
-                                    dropdownColor: widget.darkMode
-                                        ? AppColors.primaryColor
-                                        : AppColors.lightTheme,
-                                    style: TextStyle(
-                                      color: widget.darkMode
-                                          ? AppColors.lightTheme
-                                          : AppColors.primaryColor,
-                                    ),
-                                    items: _availableModels.map((String model) {
-                                      return DropdownMenuItem<String>(
-                                        value: model,
-                                        child: Text(
-                                          model
-                                              .replaceAll('_', ' ')
-                                              .toUpperCase(),
-                                          style: TextStyle(
-                                            color: widget.darkMode
-                                                ? AppColors.lightTheme
-                                                : AppColors.primaryColor,
-                                          ),
-                                        ),
-                                      );
-                                    }).toList(),
-                                    onChanged: (String? newValue) {
-                                      if (newValue != null) {
-                                        setState(() {
-                                          _selectedModel = newValue;
-                                        });
-                                      }
-                                    },
-                                  ),
-                                ),
+                                underline: Container(),
+                                items: _models.map((model) {
+                                  return DropdownMenuItem<String>(
+                                    value: model['value'],
+                                    child: Text(model['label']!),
+                                  );
+                                }).toList(),
+                                onChanged: (String? newValue) {
+                                  if (newValue != null) {
+                                    setState(() {
+                                      _selectedModel = newValue;
+                                    });
+                                  }
+                                },
                               ),
                             ),
                             const SizedBox(width: 8),

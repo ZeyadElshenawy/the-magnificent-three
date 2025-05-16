@@ -1,4 +1,4 @@
-# Install script for directory: D:/Github/the-magnificent-three/flutter/windows/flutter
+# Install script for directory: D:/codes/flutter/New folder/flutter/windows/flutter
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
