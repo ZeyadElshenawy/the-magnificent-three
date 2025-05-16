@@ -9,9 +9,8 @@ class FlaskServerService {
       await Process.run('python', ['--version']);
 
       // Start the Flask server
-      _serverProcess = await Process.start('python', [
-        r'D:\Github\the-magnificent-three\ML_Model\FlskForClassification.py'
-      ]);
+      _serverProcess = await Process.start('python',
+          [r'the-magnificent-three\ML_Model\FlskForClassification.py']);
 
       // Listen for server output
       _serverProcess!.stdout.listen((event) {
