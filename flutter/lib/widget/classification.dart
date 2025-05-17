@@ -163,21 +163,8 @@ class _ClassificationState extends State<Classification> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [
-          IconButton(
-            icon: Icon(
-              Icons.history,
-              color: widget.darkMode
-                  ? AppColors.lightTheme
-                  : AppColors.primaryColor,
-            ),
-            onPressed: () {
-              setState(() {
-                _showRightBar = !_showRightBar;
-              });
-            },
-          ),
-          const SizedBox(width: 16),
           // Add server status indicator
+
           Center(
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
@@ -208,6 +195,22 @@ class _ClassificationState extends State<Classification> {
               ),
             ),
           ),
+
+          const SizedBox(width: 16),
+          IconButton(
+            icon: Icon(
+              Icons.history,
+              color: widget.darkMode
+                  ? AppColors.lightTheme
+                  : AppColors.primaryColor,
+            ),
+            onPressed: () {
+              setState(() {
+                _showRightBar = !_showRightBar;
+              });
+            },
+          ),
+          const SizedBox(width: 16),
         ],
       ),
       body: Row(
