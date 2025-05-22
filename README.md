@@ -1,6 +1,6 @@
 # The Magnificent Three - Brain Tumor Classification System
 
-A powerful and user-friendly application that combines Flutter for the frontend and machine learning for brain tumor classification. This project provides a seamless interface for medical professionals and researchers to classify brain tumor images using various machine learning models.
+A powerful and user-friendly application that combines Flutter for the frontend and machine learning for brain tumor classification and streamlit. This project provides a seamless interface for medical professionals and researchers to classify brain tumor images using various machine learning models.
 
 ## 🚀 Features
 
