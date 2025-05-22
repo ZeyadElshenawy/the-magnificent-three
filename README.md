@@ -31,7 +31,7 @@ the-magnificent-three/
 ├── ML_Model/            # Backend ML server
 │   ├── FlaskForClassification.py  # Classification API
 │   ├── FlaskForRegression.py      # Regression API
-│   └── Models/          # Trained ML models
+│   └── Models/          # Trained ML models and code of it 
 └── images for test/     # Test images
 ```
 
@@ -49,27 +49,15 @@ the-magnificent-three/
 
 ## 🚀 Getting Started
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/the-magnificent-three.git
-   cd the-magnificent-three
-   ```
 
-2. **Setup the ML Backend**
-   ```bash
-   cd ML_Model
-   pip install -r requirements.txt
-   python FlaskForClassification.py
-   ```
-
-3. **Setup the Flutter Frontend**
+1. **Setup the Flutter Frontend**
    ```bash
    cd flutter_ml
    flutter pub get
    flutter run
    ```
 
-4. **Run the Application**
+2. **Run the Application**
    - For Windows users, you can use the provided `run it first.bat` script
    - Or run the Flutter app directly using `flutter run`
 
@@ -84,10 +72,6 @@ the-magnificent-three/
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## ⚠️ Disclaimer
 
