@@ -33,6 +33,8 @@ class _ClassificationState extends State<Classification> {
     {'value': 'random_forest', 'label': 'Random Forest'},
     {'value': 'decision_tree', 'label': 'Decision Tree'},
     {'value': 'logistic_regression', 'label': 'Logistic Regression'},
+    {'value': 'knn', 'label': 'K-Nearest Neighbors'},
+    {'value': 'naive_bayes', 'label': 'Naive Bayes'},
   ];
 
   @override

@@ -62,7 +62,7 @@ class _SplashScreenState extends State<SplashScreen>
             FadeTransition(
               opacity: _animation,
               child: Text(
-                'Project Model AI',
+                'Brain tumor classification',
                 style: TextStyle(
                   fontSize: 28,
                   color: widget.darkMode
@@ -75,18 +75,31 @@ class _SplashScreenState extends State<SplashScreen>
             ),
             const SizedBox(height: 20),
             FadeTransition(
-              opacity: _animation,
-              child: Text(
-                'Your AI Assistant',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: widget.darkMode
-                      ? AppColors.lightTheme
-                      : AppColors.primaryColor,
-                  fontWeight: FontWeight.w300,
-                ),
-              ),
-            ),
+                opacity: _animation,
+                child: Column(
+                  children: [
+                    Text(
+                      'Your AI Assistant',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: widget.darkMode
+                            ? AppColors.lightTheme
+                            : AppColors.primaryColor,
+                        fontWeight: FontWeight.w300,
+                      ),
+                    ),
+                    Text(
+                      'Odysera',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: widget.darkMode
+                            ? AppColors.lightTheme
+                            : AppColors.primaryColor,
+                        fontWeight: FontWeight.w300,
+                      ),
+                    ),
+                  ],
+                )),
           ],
         ),
       ),
