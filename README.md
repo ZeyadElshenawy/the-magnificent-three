@@ -1,6 +1,6 @@
 # The Magnificent Three - Brain Tumor Classification System
 
-A powerful and user-friendly application that combines Flutter for the frontend and machine learning for brain tumor classification. This project provides a seamless interface for medical professionals and researchers to classify brain tumor images using various machine learning models.
+A powerful and user-friendly application that combines Flutter for the frontend and machine learning for brain tumor classification and streamlit. This project provides a seamless interface for medical professionals and researchers to classify brain tumor images using various machine learning models.
 
 ## 🚀 Features
 
@@ -31,7 +31,7 @@ the-magnificent-three/
 ├── ML_Model/            # Backend ML server
 │   ├── FlaskForClassification.py  # Classification API
 │   ├── FlaskForRegression.py      # Regression API
-│   └── Models/          # Trained ML models
+│   └── Models/          # Trained ML models and code of it 
 └── images for test/     # Test images
 ```
 
@@ -49,29 +49,18 @@ the-magnificent-three/
 
 ## 🚀 Getting Started
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/the-magnificent-three.git
-   cd the-magnificent-three
-   ```
 
-2. **Setup the ML Backend**
-   ```bash
-   cd ML_Model
-   pip install -r requirements.txt
-   python FlaskForClassification.py
-   ```
-
-3. **Setup the Flutter Frontend**
+1. **Setup the Flutter Frontend**
    ```bash
    cd flutter_ml
    flutter pub get
    flutter run
    ```
 
-4. **Run the Application**
+2. **Run the Application**
    - For Windows users, you can use the provided `run it first.bat` script
    - Or run the Flutter app directly using `flutter run`
+   - and this location of app.exe "the-magnificent-three\flutter_ml\build\windows\x64\runner\Debug\flutter_ml.exe"
 
 ## 💻 Usage
 
@@ -80,14 +69,10 @@ the-magnificent-three/
 3. Choose your preferred ML model
 4. Click "Classify" to get the results
 5. View the classification results and confidence scores
+## 💻 Screenshots
+<img src="https://github.com/user-attachments/assets/617dbec3-4fcf-4e8c-8f39-ae086093c090" width="400"/>
+<img src="https://github.com/user-attachments/assets/6c2ea437-639f-404a-b184-dbc5bff3bd82" width="400"/>
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## ⚠️ Disclaimer
 
