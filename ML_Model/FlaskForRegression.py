@@ -2,10 +2,8 @@ from flask import Flask, request, jsonify
 from joblib import load
 import numpy as np
 import os
-from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
 
 # Use relative paths
 model_path = os.path.join(os.path.dirname(__file__), 'Models/Regression')
@@ -23,6 +21,5 @@ def predict():
     return jsonify({'prediction': int(prediction[0])})
 
 if __name__ == '__main__':
-    port = 5001
-    print(f"Starting Flask server on port {port}")
-    app.run(host='0.0.0.0', port=port, debug=True)
+    # Make it work on Railway
+    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5001)))

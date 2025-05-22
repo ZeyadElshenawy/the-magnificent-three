@@ -11,9 +11,11 @@ app = Flask(__name__)
 model_path = os.path.join(os.path.dirname(__file__), 'Models/classification')
 models = {
     'decision_tree': load(os.path.join(model_path, 'dt_model.pkl')),
+    'naive_bayes': load(os.path.join(model_path, 'nb_model.pkl')),
     'logistic_regression': load(os.path.join(model_path, 'logreg_model.pkl')),
     'random_forest': load(os.path.join(model_path, 'rf_model.pkl')),
-    'svc': load(os.path.join(model_path, 'svc_model.pkl'))
+    'svc': load(os.path.join(model_path, 'svc_model.pkl')),
+    'knn': load(os.path.join(model_path, 'knn_model.pkl')),
 }
 
 # Function to preprocess image
