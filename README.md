@@ -69,10 +69,6 @@ the-magnificent-three/
 4. Click "Classify" to get the results
 5. View the classification results and confidence scores
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
 ## ⚠️ Disclaimer
 
 This application is intended for research and educational purposes only. It should not be used as a substitute for professional medical advice, diagnosis, or treatment.
