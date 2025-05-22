@@ -68,6 +68,9 @@ the-magnificent-three/
 3. Choose your preferred ML model
 4. Click "Classify" to get the results
 5. View the classification results and confidence scores
+## 💻 Screenshots
+![image](https://github.com/user-attachments/assets/617dbec3-4fcf-4e8c-8f39-ae086093c090)
+
 
 ## ⚠️ Disclaimer
 
