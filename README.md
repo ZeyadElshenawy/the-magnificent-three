@@ -31,6 +31,8 @@ the-magnificent-three/
 ├── ML_Model/            # Backend ML server
 │   ├── FlaskForClassification.py  # Classification API
 │   ├── FlaskForRegression.py      # Regression API
+│   ├── app                       # stramlit
+│   ├── Brain_tumor               # code for it to models
 │   └── Models/          # Trained ML models and code of it 
 └── images for test/     # Test images
 ```
@@ -58,9 +60,8 @@ the-magnificent-three/
    ```
 
 2. **Run the Application**
-   - For Windows users, you can use the provided `run it first.bat` script
+   - For Windows users, you can use the provided `run it first.bat` script and this location of app.exe "the-magnificent-three\flutter_ml\build\windows\x64\runner\Debug\flutter_ml.exe"
    - Or run the Flutter app directly using `flutter run`
-   - and this location of app.exe "the-magnificent-three\flutter_ml\build\windows\x64\runner\Debug\flutter_ml.exe"
 
 ## 💻 Usage
 
