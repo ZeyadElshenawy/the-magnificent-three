@@ -31,6 +31,8 @@ the-magnificent-three/
 ├── ML_Model/            # Backend ML server
 │   ├── FlaskForClassification.py  # Classification API
 │   ├── FlaskForRegression.py      # Regression API
+│   ├── app                       # stramlit
+│   ├── Brain_tumor               # code for it to models
 │   └── Models/          # Trained ML models and code of it 
 └── images for test/     # Test images
 ```
@@ -80,3 +82,37 @@ This application is intended for research and educational purposes only. It shou
 ## 📧 Contact
 
 For any questions or suggestions, please open an issue in the GitHub repository.
+
+## 👥 Collaboration
+
+This project is the result of collaborative work between three talented developers:
+
+### Team Members and Contributions
+
+1. **[@ZeyadElshenawy](https://github.com/ZeyadElshenawy)**
+   - Developed and implemented the machine learning models
+   - Created and trained classification algorithms (Decision Tree, Naive Bayes, Logistic Regression, Random Forest, SVC, KNN)
+   - Optimized model performance for brain tumor classification
+
+2. **[@AbdullahAhmedff](https://github.com/AbdullahAhmedff)**
+   - Built the Streamlit web interface
+   - Implemented the interactive dashboard for model visualization
+   - Created user-friendly data visualization components
+
+
+3. **[@mohaaHeiba](https://github.com/mohaaHeiba)**
+   - Developed the Flutter desktop application
+   - Created the Flask backend server
+   - Integrated ML models with the frontend
+   - Implemented the API endpoints for model inference
+   - Connected all components into a cohesive system
+
+
+### Project Integration
+The team worked together to create a seamless integration between:
+- Machine Learning Models
+- Streamlit Dashboard
+- Flutter desktop App
+- Flask Backend Server
+
+This collaborative effort resulted in a comprehensive brain tumor classification system that combines the strengths of each technology stack.
