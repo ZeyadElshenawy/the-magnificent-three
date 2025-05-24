@@ -31,6 +31,8 @@ the-magnificent-three/
 ├── ML_Model/            # Backend ML server
 │   ├── FlaskForClassification.py  # Classification API
 │   ├── FlaskForRegression.py      # Regression API
+│   ├── app                       # stramlit
+│   ├── Brain_tumor               # code for it to models
 │   └── Models/          # Trained ML models and code of it 
 └── images for test/     # Test images
 ```
