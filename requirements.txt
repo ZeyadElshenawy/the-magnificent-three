@@ -1,0 +1,18 @@
+# Streamlit dashboard (ML_Model/app.py)
+streamlit
+h5py
+matplotlib
+
+# Flask APIs (ML_Model/FlaskForClassification.py, FlaskForRegression.py)
+flask
+flask-cors
+
+# ML + image processing (shared)
+numpy
+scikit-learn
+opencv-python
+Pillow
+joblib
+
+# Notebook (Brain_Tumor.ipynb)
+jupyter
