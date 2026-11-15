@@ -4,6 +4,10 @@ Brain-tumor classification from MRI images, wrapping a scikit-learn model zoo be
 
 Classifies three tumor types: **Meningioma**, **Glioma**, **Pituitary Tumor**.
 
+## 👥 Team
+
+University team project. **My part:** data processing and the machine-learning models (training and comparing the six classifiers).
+
 ## 🚀 Features
 
 - **Six classical ML models** trained on the same task for comparison:
